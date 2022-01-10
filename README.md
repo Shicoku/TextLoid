@@ -29,7 +29,7 @@ Releases または [公式サイト]() からインストーラーをダウン�
 <br>クレジット表記は不要です
 
 ## 使用したパッケージ、ライブラリ等
-<br>opencv
+opencv
 <br>tkinter
 <br>win32gui
 <br>json
