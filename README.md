@@ -23,7 +23,15 @@ Releases または [公式サイト]() からインストーラーをダウン�
 <br>開けないと一行目は生成されないです
 <br><br>本ソフトによる損害、不利益などは製作者は一切責任を取りません
 
-##利用規約
+## 利用規約
 二次配布、自作発言は禁止です
 <br>営利利用、商用利用等は [こちらのライセンス](https://www.ah-soft.com/licensee/voice_individual.html) をご覧ください
 <br>クレジット表記は不要です
+
+## 使用したパッケージ、ライブラリ等
+<br>opencv
+<br>tkinter
+<br>win32gui
+<br>json
+<br>pyautogui
+<br>pyperclip
