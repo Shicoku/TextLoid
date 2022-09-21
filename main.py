@@ -1,3 +1,4 @@
+from ast import If
 import tkinter
 from tkinter import font
 from tkinter import messagebox
@@ -27,28 +28,29 @@ class App1(tkinter.Frame):
         # ボイスロイドウィンドウ名を保存
         self.save = tkinter.Button(
             self, bg='#fd6767', fg='#ffffff', width=15, height=3)
-        self.save["text"] = "ウィンドウ名を保存"  # ボタンのテキスト
+        self.save["text"] = "ウィンドウ名を保存"
         self.save["command"] = self.save_Func
         self.save.pack(side="top")
 
         # 音声ファイルを生成する
         self.make = tkinter.Button(
             self, bg='#fd6767', fg='#ffffff', width=10, height=3)
-        self.make["text"] = "保存"  # ボタンのテキスト
-        self.make["command"] = self.make_Func  # 割り込み関数
+        self.make["text"] = "保存"
+        self.make["command"] = self.make_Func
         self.make.pack(side="bottom")
 
     def make_Func(self):
+        # コンフィグの呼び出し
         with open('set/config.json', encoding="UTF-8") as f:
             config = json.load(f)
-        for window in config:
-            window = window
-        memoapp = win32gui.FindWindow(None, window)
+        win = win32gui.FindWindow(None, config['window'])
+        print(win)
+        win32gui.SetForegroundWindow(win)
         time.sleep(1)
-        win32gui.SetForegroundWindow(memoapp)
-        f = open('set/script.txt', 'r', encoding='UTF-8')
+        # 合成開始
+        text = open(config['save_text'], 'r', encoding='UTF-8')
         while True:
-            data = f.readline()
+            data = text.readline()
             if data == '':
                 break
             pyperclip.copy(data.rstrip('\n'))
@@ -64,14 +66,15 @@ class App1(tkinter.Frame):
             pyautogui.hotkey('ctrl', 'a')
             pyautogui.hotkey('del')
         f.close()
-        messagebox.showinfo('完了', 'テキスト生成が完了しました')
+        if config["end_window"] == True:
+            messagebox.showinfo('完了', '保存が完了しました')
 
     def save_Func(self):
-        config = {
-            "window": txt.get()
-        }
+        with open('set/config.json', encoding="UTF-8") as f:
+            config = json.load(f)
+        config['window'] = txt.get()
         with open('set/config.json', 'w', encoding='UTF-8') as f:
-            json.dump(config, f, indent=4, ensure_ascii=False)
+            json.dump(config, f, indent=2, ensure_ascii=False)
 
 
 app = App1(master=root)
