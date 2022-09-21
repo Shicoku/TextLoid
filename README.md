@@ -1,7 +1,7 @@
 # ボイスロイド支援ツール 一括合成
 [ボイスロイド](https://www.ah-soft.com/voiceroid/) の支援ツールは、ボイスロイドの音声をテキストファイルから一行づつ呼び出し、生成するツールです
 
-##インストール
+## インストール
 [Releases](https://github.com/texture08/voiceroid_tool/releases) から最新のzipをダウンロードして展開してください
 
 ## アンインストール
@@ -31,14 +31,14 @@
 <br><br>VOICEVOX、棒読みちゃん等での使用はできません
 <br>今後の課題にしていこうと思います
 
-##config.jsonについて
+## config.jsonについて
 config.jsonには本ソフトの設定項目があります
-#window
+# window
 生成時に参照するウィンドウを変更します
-#end_window
+# end_window
 生成完了後に確認ダイアログを表示するかどうかを指定します
 <br>true で表示、false で非表示です
-#save_text
+# save_text
 音声生成時に参照するテキストの中身です
 <br>ファイルは必ず 本ソフトのsetフォルダ内に入れてください
 
