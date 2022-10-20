@@ -1,5 +1,6 @@
 {
-  "window": "VOICEROID＋ 東北きりたん EX*",
-  "end_window": false,
+  "window": ["VOICEROID＋ 東北きりたん EX*", "VOICEROID＋ 民安ともえ EX*"],
+  "start_win": "VOICEROID＋ 東北きりたん EX*",
+  "end_window": true,
   "save_text": "set/script.txt"
 }
