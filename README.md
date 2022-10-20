@@ -1,5 +1,6 @@
-# ボイスロイド支援ツール 一括合成
-[ボイスロイド](https://www.ah-soft.com/voiceroid/) の支援ツールは、ボイスロイドの音声をテキストファイルから一行づつ呼び出し、生成するツールです
+# TextLoid
+[ボイスロイド](https://www.ah-soft.com/voiceroid/) の支援ツールです
+<br>本ソフトはボイスロイドの音声をテキストファイルから一行づつ呼び出し、生成するツールです
 
 ## インストール
 [Releases](https://github.com/texture08/voiceroid_tool/releases) から最新のzipをダウンロードして展開してください
