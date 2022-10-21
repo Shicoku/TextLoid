@@ -1,5 +1,5 @@
 # TextLoid
-[ボイスロイド](https://www.ah-soft.com/voiceroid/) の支援ツールです
+TextLoid(以下本ソフト)は [ボイスロイド](https://www.ah-soft.com/voiceroid/) の支援ツールです
 <br>本ソフトはボイスロイドの音声をテキストファイルから一行づつ呼び出し、生成するツールです
 
 ## インストール
