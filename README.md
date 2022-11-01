@@ -46,6 +46,7 @@ config.jsonには本ソフトの設定項目があります。
 二次配布、自作発言は禁止です
 <br>営利利用、商用利用等は [こちらのライセンス](https://www.ah-soft.com/licensee/voice_individual.html) をご覧ください
 <br>クレジット表記は不要です
+<br>改造等はご自由にどうぞ
 
 ## 使用したパッケージ、ライブラリ等
 opencv
