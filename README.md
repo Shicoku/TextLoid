@@ -1,4 +1,4 @@
-# TextLoid ![Num of dls](https://img.shields.io/github/downloads/texture08/MS.TextLoid/total?color=%236643B2&style=flat-square)
+# TextLoid ![Num of dls](https://img.shields.io/github/downloads/texture08/TextLoid/total?color=%236643B2&style=flat-square)
 TextLoid(以下本ソフト)は [ボイスロイド](https://www.ah-soft.com/voiceroid/) の支援ツールです
 <br>本ソフトはボイスロイドの音声をテキストファイルから一行づつ呼び出し、生成するツールです
 
