@@ -13,8 +13,9 @@ root.geometry('400x300')
 root.title(u'TextLoid')
 root.iconbitmap('set/icon.ico')
 
-with open('set/config.json', encoding='UTF-8') as f:
-    config = json.load(f)
+with open('set/config.json', encoding='UTF-8') as f1, open('char.json', encoding='UTF-8') as f2:
+    config = json.load(f1)
+    char = json.load(f2)
 
 
 class App1(tkinter.Frame):
@@ -30,27 +31,45 @@ class App1(tkinter.Frame):
         self.note.add(self.setting, text='設定')
 
         # メインタブ
-        self.val = tkinter.StringVar(value=config['start_win'])
-        voice = tkinter.OptionMenu(self.main, self.val, *config['window'])
-        voice.grid(row=0, column=0, padx=5, pady=10)
 
+        # ボイスロイドを選択
+        self.val = tkinter.StringVar(value=config['start_win'])
+        self.voice = tkinter.OptionMenu(self.main, self.val, *char['char'])
+        self.voice.grid(row=0, column=0, padx=5, pady=10)
+
+        # 保存ボタン
         self.make = ttk.Button(self.main)
         self.make['text'] = '保存'
         self.make['command'] = self.make_Func
         self.make.grid(row=0, column=1, pady=10)
 
         # 設定タブ
+
+        # 終了ウィンドウの設定
         self.val2 = tkinter.BooleanVar(value=config['end_window'])
         self.end_chk = ttk.Checkbutton(self.setting, variable=self.val2)
         self.end_chk['text'] = '生成完了後、終了ウィンドウを表示'
         self.end_chk['command'] = self.end_wind
         self.end_chk.grid(padx=5, pady=10)
 
+        # 台本の選択ボタン
         self.script_btn = ttk.Button(self.setting)
         self.script_btn['text'] = '台本を選択'
         self.script_btn['command'] = self.select_script
-        self.script_btn.grid(padx=5, sticky=tkinter.W)
+        self.script_btn.grid(column=0, row=1, padx=5,
+                             pady=10, sticky=tkinter.W)
 
+        # ウィンドウ追加 テキストボックス
+        self.add_ent = ttk.Entry(self.setting)
+        self.add_ent.grid(padx=5, sticky=tkinter.W)
+
+        # 実行ボタン
+        self.add_btn = ttk.Button(self.setting)
+        self.add_btn['text'] = 'ボイスロイドを追加'
+        self.add_btn['command'] = self.add_window
+        self.add_btn.grid(padx=5, sticky=tkinter.W)
+
+        # 初期状態に戻すボタン
         self.defa = ttk.Button(self.setting)
         self.defa['text'] = '初期状態に戻す'
         self.defa['command'] = self.default
@@ -70,6 +89,11 @@ class App1(tkinter.Frame):
             filetypes=fltype, initialdir=dir)
         with open('set/config.json', 'w', encoding='UTF-8') as f:
             json.dump(config, f, indent=2, ensure_ascii=False)
+
+    def add_window(self):
+        char['char'].append(self.add_ent.get())
+        with open('char.json', 'w', encoding='UTF-8') as f:
+            json.dump(char, f, indent=2, ensure_ascii=False)
 
     def default(self):
         config['end_window'] = True
