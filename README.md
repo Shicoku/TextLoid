@@ -9,7 +9,8 @@ TextLoid(以下本ソフト)は [ボイスロイド](https://www.ah-soft.com/voi
 展開したフォルダを削除してください
 
 ## アップデート
-同封のchar.jsonを上書きしてください
+[Releases](https://github.com/texture08/voiceroid_tool/releases) から最新バージョンをダウンロードして展開してください。
+<br>キャラクターの情報を引き継ぐには、前バージョンのフォルダ内にあるchar.jsonを上書きしてください。
 <br>また、設定を移行する場合はset/config.jsonを上書きしてください
 <br>なお、新項目が追加された場合、エラーが出る可能性があるので、必ずバックアップを取ってください
 
