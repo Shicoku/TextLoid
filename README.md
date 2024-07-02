@@ -16,7 +16,7 @@ TextLoid(以下本ソフト)は [ボイスロイド](https://www.ah-soft.com/voi
 
 ## 使い方
 [Releases](https://github.com/texture08/voiceroid_tool/releases) からzipファイルをダウンロードします
-好きな場所に解凍したらインストールは完了です
+<br>好きな場所に解凍したらインストールは完了です
 <br>任意のフォルダにexeファイル、script.txt、その他のファイルやフォルダができます
 <br>script.txtには生成したいテキストを行ごとに書きます
 <br>次にexeファイルを起動します
